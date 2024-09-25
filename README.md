@@ -66,4 +66,12 @@ Question 1.6 indiquer ce que cette commande a modifié dans votre projet.
     Cette commande a installé un dossier node_modules et un fichier package-lock.json dans mon répertoire.
 
 Question 1.7 quelles sont les différences entre les scripts http-dev et http-prod ?
+
     http-dev restart automatiquement le serveur lorsqu'on modifie le fichier server-http.mjs, alors que http-prod ne restart pas le server quand on le fait.
+
+Question 1.8 donner les codes HTTP reçus par votre navigateur pour chacune des quatre pages précédentes.
+
+    http://localhost:8000/index.html    => code 200
+    http://localhost:8000/random.html   => code 200
+    http://localhost:8000/              => code 404
+    http://localhost:8000/dont-exist    => code 404
