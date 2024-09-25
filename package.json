@@ -1,0 +1,19 @@
+{
+  "name": "devweb-tp5",
+  "version": "1.0.0",
+  "description": "petit serveur NodeJs et Express pour le TP 5 de dev web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tviret/cours.git"
+  },
+  "author": "Thimotée Viret",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tviret/cours/issues"
+  },
+  "homepage": "https://github.com/tviret/cours#readme"
+}
