@@ -60,3 +60,10 @@ Question 1.5 donner le code de requestListener() modifié avec gestion d’erreu
           }
   }
 ```
+
+Question 1.6 indiquer ce que cette commande a modifié dans votre projet.
+
+    Cette commande a installé un dossier node_modules et un fichier package-lock.json dans mon répertoire.
+
+Question 1.7 quelles sont les différences entre les scripts http-dev et http-prod ?
+    http-dev restart automatiquement le serveur lorsqu'on modifie le fichier server-http.mjs, alors que http-prod ne restart pas le server quand on le fait.
