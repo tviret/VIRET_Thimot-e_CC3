@@ -19,7 +19,7 @@ Question 1.2 donner la liste des en-têtes qui ont changé depuis la version pr�
     Keep-Alive: timeout=5
     Content-Length: 20
 
-    Celles qui ont changé sont : Content-type, Content-Lenght
+    Celles qui ont changé sont : Content-type, Content-Lenght, Date
 
 
 Question 1.3 que contient la réponse reçue par le client ?
@@ -31,3 +31,32 @@ Question 1.4 quelle est l’erreur affichée dans la console ? Retrouver sur htt
     L'erreur affichée dans la console est : Error: ENOENT: no such file or directory, open 'C:\Users\viret\cours\devweb\devweb-tp5\index.html'
     
     Sur le site de l'api node on retrouve cette ligne à propos de ce code d'erreur : ENOENT (No such file or directory): Commonly raised by fs operations to indicate that a component of the specified pathname does not exist. No entity (file or directory) could be found by the given path.
+
+Question 1.5 donner le code de requestListener() modifié avec gestion d’erreur en async/await.
+ ```javascript
+ async function requestListener(_request, response) {
+
+    try{
+
+      let contents = await fs.readFile("index.html", "utf8")
+      response.setHeader("Content-Type", "text/html");
+      response.writeHead(200);
+      return response.end(contents);
+
+    }
+    catch(error){
+
+      console.error(error);
+            if (error['code'] == 'ENOENT'){     
+
+              response.writeHead(500)
+              return response.end('<h1> Erreur serveur, fichier ou dossier introuvable</h1>')
+            }
+            else{
+
+              response.writeHead(500)
+              return response.end('<h1> Une erreur serveur est survenue.</h1>')
+            }
+          }
+  }
+```
