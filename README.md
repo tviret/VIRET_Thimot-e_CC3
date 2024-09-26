@@ -75,3 +75,34 @@ Question 1.8 donner les codes HTTP reçus par votre navigateur pour chacune des 
     http://localhost:8000/random.html   => code 200
     http://localhost:8000/              => code 404
     http://localhost:8000/dont-exist    => code 404
+
+PARTIE 2 : framework Express
+
+Question 2.1 : donner les URL des documentations de chacun des modules installés par la commande précédente.
+
+    https://expressjs.com/fr/
+    https://www.npmjs.com/package/http-errors
+    https://www.npmjs.com/package/loglevel
+    https://www.npmjs.com/package/morgan
+
+Question 2.3 lister les en-têtes des réponses fournies par Express. Lesquelles sont nouvelles par rapport au serveur HTTP ?
+
+    Les headers renvoyés par Express sont :
+
+      HTTP/1.1 200 OK
+      X-Powered-By: Express
+      Accept-Ranges: bytes
+      Cache-Control: public, max-age=0
+      Last-Modified: Wed, 25 Sep 2024 02:37:59 GMT
+      ETag: W/"10e-192270aeb3f"
+      Content-Type: text/html; charset=UTF-8
+      Content-Length: 270
+      Date: Thu, 26 Sep 2024 22:15:11 GMT
+      Connection: keep-alive
+      Keep-Alive: timeout=5
+
+    Les nouvelles en-têtes sont  X-Powered-By, Accept-Ranges, Cache-Control, Last-Modified, ETag
+
+Question 2.4 quand l’événement listening est-il déclenché ?
+
+    L'evenement listenning est demarré au lancement du serveur Express au moment où celui-ci commence à écouter les requêtes
