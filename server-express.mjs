@@ -6,6 +6,7 @@ const port = 8000;
 
 const app = express();
 
+app.set("view engine", "ejs");
 
 
 app.use(express.static("static", {index:"index.html"}));
@@ -13,10 +14,10 @@ if (app.get("env") === "development") app.use(morgan("dev"));
 
 app.get("/random/:nb", async function (request, response, next) {
   const length = request.params.nb;
-  const contents = Array.from({ length })
-    .map((_) => `<li>${Math.floor(100 * Math.random())}</li>`)
-    .join("\n");
-  return response.send(`<html><ul>${contents}</ul></html>`);
+  const numbers = Array.from({ length},()=>Math.floor(Math.random()*100))
+  const welcome = "Bienvenue sur la page de nombres aléatoires"
+
+  return response.render("random", {numbers, welcome});
 });
 
 const server = app.listen(port, host); 

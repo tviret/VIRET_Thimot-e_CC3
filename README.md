@@ -117,5 +117,5 @@ Question 2.5 indiquer quelle est l’option (activée par défaut) qui redirige 
 
 Question 2.6 visiter la page d’accueil puis rafraichir (Ctrl+R) et ensuite forcer le rafraichissement (Ctrl+Shift+R). Quels sont les codes HTTP sur le fichier style.css ? Justifier.
 
-  Avec le rafraichissement normal on a un code 304 pour style.css, ce code signifie que le fichier a été recupéré depuis le cache du navigateur.
-  Avec le rafraichissement forcé on a un code 200 car on force le navigateur à ne pas récupérer les données dans le cache et redemander directement au serveur.
+    Avec le rafraichissement normal on a un code 304 pour style.css, ce code signifie que le fichier a été recupéré depuis le cache du navigateur.
+    Avec le rafraichissement forcé on a un code 200 car on force le navigateur à ne pas récupérer les données dans le cache et redemander directement au serveur.
