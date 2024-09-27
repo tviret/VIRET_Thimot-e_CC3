@@ -106,3 +106,16 @@ Question 2.3 lister les en-têtes des réponses fournies par Express. Lesquelles
 Question 2.4 quand l’événement listening est-il déclenché ?
 
     L'evenement listenning est demarré au lancement du serveur Express au moment où celui-ci commence à écouter les requêtes
+
+Question 2.5 indiquer quelle est l’option (activée par défaut) qui redirige / vers /index.html ?
+
+    L'option activée par défaut qui permet cela est l'option "index" qu'on peut utiliser comme suit :  
+
+      app.use(express.static("static", {index:"index.html"})); activée par défaut redirige / vers /index.html
+      app.use(express.static("static", {index:"home.html"})); renvoirait / vers /home.html
+      app.use(express.static("static", {index:false})); désactive le routage automatique de /
+
+Question 2.6 visiter la page d’accueil puis rafraichir (Ctrl+R) et ensuite forcer le rafraichissement (Ctrl+Shift+R). Quels sont les codes HTTP sur le fichier style.css ? Justifier.
+
+  Avec le rafraichissement normal on a un code 304 pour style.css, ce code signifie que le fichier a été recupéré depuis le cache du navigateur.
+  Avec le rafraichissement forcé on a un code 200 car on force le navigateur à ne pas récupérer les données dans le cache et redemander directement au serveur.

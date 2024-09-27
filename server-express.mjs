@@ -6,9 +6,10 @@ const port = 8000;
 
 const app = express();
 
-app.get(["/", "/index.html"], async function (request, response, next) {
-  response.sendFile("index.html", { root: "./" });
-});
+
+
+app.use(express.static("static", {index:"index.html"}));
+if (app.get("env") === "development") app.use(morgan("dev"));
 
 app.get("/random/:nb", async function (request, response, next) {
   const length = request.params.nb;
@@ -18,7 +19,7 @@ app.get("/random/:nb", async function (request, response, next) {
   return response.send(`<html><ul>${contents}</ul></html>`);
 });
 
-const server = app.listen(port, host);
+const server = app.listen(port, host); 
 
 server.on("listening", () =>
   console.info(
