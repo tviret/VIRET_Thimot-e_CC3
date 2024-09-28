@@ -119,3 +119,14 @@ Question 2.6 visiter la page d’accueil puis rafraichir (Ctrl+R) et ensuite for
 
     Avec le rafraichissement normal on a un code 304 pour style.css, ce code signifie que le fichier a été recupéré depuis le cache du navigateur.
     Avec le rafraichissement forcé on a un code 200 car on force le navigateur à ne pas récupérer les données dans le cache et redemander directement au serveur.
+
+Question 2.7 vérifier que l’affichage change bien entre le mode production et le mode development.
+
+    L'affichage change bien entre le mode developpement et le mode production
+    En mode production on a par exemple 
+    Error 404
+      Not Found
+
+    on a donc Error suivi du code d'erreur et ensuite la description de l'erreur.
+    En mode developpement on a tout ça ainsi que des lignes de debug plus detaillées indiquant l'emplacement de l'erreur.
+
